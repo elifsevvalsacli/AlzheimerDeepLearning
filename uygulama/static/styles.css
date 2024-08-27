@@ -1,0 +1,109 @@
+/* Genel Stil Ayarları */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Stili */
+header {
+    width: 100%;
+    background-color: rgba(0, 123, 255, 0.85); /* Hafif şeffaf bir header */
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-sizing: border-box;
+    margin: 0; /* Header’ın kenarlarda boşluk bırakmaması için */
+}
+
+/* Logo Stili */
+header .logo {
+    width: 100px; /* Logo genişliği */
+    height: 50px; /* Logo yüksekliği */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: white; /* Logo arka planının beyaz olması için */
+    border-radius: 8px; /* Kenarları yuvarlatmak için */
+}
+
+/* Navbar Stili */
+nav {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 18px;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+/* Container Stili */
+.container {
+    background-color: rgba(255, 255, 255, 0.9); /* Hafif şeffaf bir arka plan */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    text-align: center;
+    margin: 80px auto 0; /* Header’ın altında yer açar ve ortalar */
+}
+
+/* Başlık Stili */
+h1 {
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Form Alanları Stili */
+.file-input {
+    margin-bottom: 20px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 100%;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Kayıt Ol Linki Stili */
+.login-link {
+    margin-top: 20px;
+}
+
+.login-link a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}

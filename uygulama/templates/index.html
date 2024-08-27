@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alzheimer Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body class="hero-anime"> 
+
+    <!-- Navigation -->
+    <div class="navigation-wrap bg-light start-header start-style">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="navbar navbar-expand-md navbar-light">
+                        <a class="navbar-brand" href="{{ url_for('index') }}">
+                            <img src="https://leftbrainmedia.com/wp-content/uploads/2017/09/Brain-Sparks.png" alt="Alzheimer Classifier" width="100">
+                        </a>  
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto py-4 py-md-0">
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                    <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+                                </li>
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                    <a class="nav-link" href="{{ url_for('hakkinda') }}">About</a>
+                                </li>
+                                {% if 'user' in session %}
+                                    <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                        <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+                                    </li>
+                                {% else %}
+                                    <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                        <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+                                    </li>
+                                    <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                        <a class="nav-link" href="{{ url_for('register') }}">Register</a>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </nav>    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Section -->
+    <div class="section full-height">
+        <div class="absolute-center">
+            <div class="section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <h1>Alzheimer Classifier</h1>
+                            <p>Alzheimer hastalığı, beyindeki sinir hücrelerinin hasar görmesi sonucu ortaya çıkan ilerleyici bir nörodejeneratif hastalıktır. Bu hastalık genellikle hafıza kaybı, bilişsel işlevlerde azalma ve davranış değişiklikleri ile kendini gösterir. Erken teşhis, hastalığın ilerlemesini yavaşlatmak ve yaşam kalitesini artırmak için önemlidir.</p>
+                            <p>Bu uygulama, Alzheimer hastalığının çeşitli evrelerini tespit etmek için geliştirilmiş bir sınıflandırıcı kullanır. Lütfen aşağıdan bir beyin görüntüsü yükleyin ve analiz edin.</p>
+                            <form action="/" method="post" enctype="multipart/form-data" class="mt-4">
+                                <input type="file" name="file" class="file-input form-control" required>
+                                <button type="submit" class="btn btn-primary mt-3">Yükle</button>
+                            </form>
+                        </div>  
+                    </div>    
+                </div>    
+            </div>
+        </div>
+    </div>
+
+    <!-- Empty Space for Footer -->
+    <div class="my-5 py-5"></div>
+ 
+
+</body>
+</html>

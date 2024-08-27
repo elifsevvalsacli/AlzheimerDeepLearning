@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alzheimer Classifier</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+</head>
+<body class="hero-anime">
+
+    <!-- Navigation -->
+    <div class="navigation-wrap bg-light start-header start-style">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <nav class="navbar navbar-expand-md navbar-light">
+                        <a class="navbar-brand" href="{{ url_for('index') }}">
+                            <img src="https://leftbrainmedia.com/wp-content/uploads/2017/09/Brain-Sparks.png" alt="Alzheimer Classifier" width="100">
+                        </a>
+                        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ml-auto py-4 py-md-0">
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                    <a class="nav-link" href="{{ url_for('index') }}">Home</a>
+                                </li>
+                                <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                    <a class="nav-link" href="{{ url_for('hakkinda') }}">About</a>
+                                </li>
+                                {% if 'user' in session %}
+                                    <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                        <a class="nav-link" href="{{ url_for('logout') }}">Logout</a>
+                                    </li>
+                                {% else %}
+                                    <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                        <a class="nav-link" href="{{ url_for('login') }}">Login</a>
+                                    </li>
+                                    <li class="nav-item pl-4 pl-md-0 ml-0 ml-md-4">
+                                        <a class="nav-link" href="{{ url_for('register') }}">Kayıt Ol</a>
+                                    </li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Section -->
+    <div class="section full-height">
+        <div class="absolute-center">
+            <div class="section">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12 text-center">
+                            <h1>Hakkında</h1>
+                            <p>Bu proje, Alzheimer hastalığının çeşitli evrelerini tespit etmek için derin öğrenme yöntemlerini kullanarak geliştirilmiştir. Proje, hastalığın erken teşhisi için görüntü analizi yaparak sonuçlar sunar.</p>
+                            <p>Proje staj projesi olarak hazırlanmıştır. Proje derin öğrenme modelinin geliştirilmesinden ve uygulama süreçlerinden hepsi staj süresince gerçekleştirilmiştir. Model, VGG19 ve benzeri ağ mimarileri kullanılarak oluşturulmuş ve TensorFlow ile eğitilmiştir.</p>
+                            <p>Proje kapsamındaki görevler şunlardır:</p>
+                            <ul>
+                                <li>Veri ön işleme ve model eğitimi</li>
+                                <li>Flask uygulaması ile kullanıcı arayüzü oluşturma</li>
+                                <li>Model tahminlerinin web arayüzünde sunulması</li>
+                                <li>Kullanıcı ve yönetici işlemlerinin yönetilmesi</li>
+                            </ul>
+                            <p>Bu proje, derin öğrenme ve web geliştirme konularındaki bilgi ve becerileri uygulamak amacıyla hazırlanmıştır.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-light py-3">
+        <div class="container text-center">
+            <p>İletişim Bilgileri: <a href="mailto:elifsevvalsacli@gmail.com">elifsevvalsacli@gmail.com</a> | Telefon: +90 530 223 1911</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>
